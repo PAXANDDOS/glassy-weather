@@ -1,0 +1,467 @@
+/* Large desktops and laptops */
+@media only screen and (max-width: 1440px) {
+    .input {
+        width: 70%;
+    }
+    .languageMenu {
+        width: 15%;
+    }
+    .current {
+        margin: 1% 0;
+        width: 68%;
+        padding: 1%;
+    }
+    .leftinfoImage{
+        width: 78%;
+    }
+    .leftinfoImage img {
+        width: 78%;
+    }
+    .leftinfo {
+        width: 60%;
+    }
+    .rightinfo {
+        width: 40%;
+    }
+    .forecast {
+        width: 70%;
+    }
+    .heading label {
+        font-size: 1.3em;
+    }
+    .heading span{
+        font-size: 1.3em;
+    }
+    .heading #city{
+        font-size: 1.5em;
+    }
+    .leftinfo #status { 
+        font-size: 1.9em;
+    }
+    .leftinfoData span{
+        font-size: 4.9em;
+    }
+    .leftinfoData span#feels, #feelsTemp {
+        font-size: .85em;
+    }
+    .rightinfo div span {
+        font-size: 1.3em;
+    }
+    .forecast .card span {
+        font-size: .85em;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .input {
+        width: 70%;
+    }
+    .languageMenu {
+        width: 18%;
+    }
+    .current {
+        margin: 1% 0;
+        width: 68%;
+        padding: 1%;
+    }
+    .leftinfoImage{
+        width: 78%;
+    }
+    .leftinfoImage img {
+        width: 78%;
+    }
+    .leftinfo {
+        width: 60%;
+    }
+    .rightinfo {
+        width: 40%;
+    }
+    .forecast {
+        width: 70%;
+    }
+    .heading label {
+        font-size: 1.3em;
+    }
+    .heading span{
+        font-size: 1.3em;
+    }
+    .heading #city{
+        font-size: 1.5em;
+    }
+    .leftinfo #status { 
+        font-size: 1.9em;
+    }
+    .leftinfoData span{
+        font-size: 4.9em;
+    }
+    .leftinfoData span#feels, #feelsTemp {
+        font-size: .85em;
+    }
+    .rightinfo div span {
+        font-size: 1.3em;
+    }
+    .forecast .card span {
+        font-size: .85em;
+    }
+    .temporary {
+        width: 65%;
+        padding: 1%;
+        border-radius: 15px;
+    }
+    .temporary label {
+        font-size: 1.3em;
+        margin-top: 5%;
+    }
+    .temporary div {
+        margin-top: 5%;
+    }
+    .temporary div div {
+        width: 100%;
+    }
+    .temporary div div:first-child a {
+        margin: 0 5%;
+    }
+}
+
+/* Portrait tablets and medium desktops */
+@media only screen and (max-width: 992px) {
+    .input {
+        width: 80%;
+    }
+    .languageMenu {
+        width: 20%;
+    }
+    .current {
+        margin: 1% 0;
+        width: 78%;
+        padding: 1%;
+    }
+    .leftinfoImage{
+        width: 75%;
+    }
+    .leftinfoImage img {
+        width: 75%;
+    }
+    .leftinfo {
+        width: 65%;
+    }
+    .rightinfo {
+        width: 35%;
+    }
+    .forecast {
+        width: 80%;
+    }
+    .heading label {
+        font-size: 1.35em;
+    }
+    .heading span{
+        font-size: 1.35em;
+    }
+    .heading #city{
+        font-size: 1.55em;
+    }
+    .leftinfo #status { 
+        font-size: 2em;
+    }
+    .leftinfoData span{
+        font-size: 5em;
+    }
+    .leftinfoData span#feels, #feelsTemp {
+        font-size: .92em;
+    }
+    .rightinfo div span {
+        font-size: 1.2em;
+    }
+    .forecast .card span {
+        font-size: .85em;
+    }
+    .temporary {
+        width: 80%;
+        padding: 1%;
+        border-radius: 15px;
+    }
+    .temporary label {
+        font-size: 1.3em;
+        margin-top: 5%;
+    }
+    .temporary div {
+        margin-top: 5%;
+    }
+    .temporary div div {
+        width: 100%;
+    }
+    .temporary div div:first-child a {
+        margin: 0 5%;
+    }
+}
+
+/* Landscape phones and portrait tablets */
+@media only screen and (max-width: 767px) {
+    .input {
+        width: 90%;
+        border-radius: 8px;
+    }
+    .languageMenu {
+        width: 25%;
+    }
+    .current {
+        margin: 1% 0;
+        width: 88%;
+        padding: 1%;
+        border-radius: 8px;
+    }
+    .leftinfoImage{
+        width: 70%;
+    }
+    .leftinfoImage img {
+        width: 70%;
+    }
+    .leftinfo {
+        width: 60%;
+    }
+    .rightinfo {
+        width: 40%;
+    }
+    .forecast {
+        width: 90%;
+    }
+    .forecast .card {
+        border-radius: 8px;
+    }
+    .heading label {
+        font-size: 1.2em;
+    }
+    .heading span{
+        font-size: 1.2em;
+    }
+    .heading #city{
+        font-size: 1.4em;
+    }
+    .leftinfo #status { 
+        font-size: 1.6em;
+    }
+    .leftinfoData span{
+        font-size: 4em;
+    }
+    .leftinfoData span#feels, #feelsTemp {
+        font-size: .8em;
+    }
+    .rightinfo div span {
+        font-size: 1em;
+    }
+    .forecast .card span {
+        font-size: .73em;
+    }
+    .temporary {
+        width: 85%;
+        padding: 1%;
+        border-radius: 15px;
+    }
+    .temporary label {
+        font-size: 1em;
+        margin-top: 4%;
+    }
+    .temporary div {
+        margin-top: 5%;
+    }
+    .temporary div div {
+        width: 100%;
+    }
+    .temporary div div:first-child a {
+        margin: 0 5%;
+    }
+}
+
+/* Landscape phones and smaller */
+@media only screen and (max-width: 480px) {
+    .input {
+        width: 90%;
+        border-radius: 6px;
+    }
+    .input #globeSvg {
+        width: 20px;
+        height: 20px;
+    }
+    .languageMenu {
+        width: 35%;
+    }
+    .current {
+        margin: 1% 0;
+        width: 88%;
+        padding: 1%;
+        border-radius: 6px;
+    }
+    .leftinfoImage{
+        width: 70%;
+    }
+    .leftinfoImage img {
+        width: 70%;
+    }
+    .leftinfo {
+        width: 60%;
+    }
+    .rightinfo {
+        width: 40%;
+    }
+    .forecast {
+        width: 90%;
+    }
+    .forecast .card {
+        border-radius: 6px;
+    }
+    .heading label {
+        font-size: .9em;
+    }
+    .heading span{
+        font-size: .9em;
+    }
+    .heading #city{
+        font-size: 1.2em;
+    }
+    .leftinfo #status { 
+        font-size: 1.4em;
+    }
+    .leftinfoData span{
+        font-size: 3em;
+    }
+    .leftinfoData span#feels, #feelsTemp {
+        font-size: .6em;
+    }
+    .rightinfo div span {
+        font-size: .8em;
+    }
+    .forecast .card span {
+        font-size: .6em;
+    }
+    .temporary {
+        width: 90%;
+        padding: 1%;
+        border-radius: 15px;
+    }
+    .temporary h1 {
+        font-size: 1.5em;;
+    }
+    .temporary label {
+        font-size: .9em;
+        margin-top: 4%;
+    }
+    .temporary div {
+        margin-top: 5%;
+    }
+    .temporary div div {
+        width: 100%;
+    }
+    .temporary div div:first-child a {
+        margin: 0 5%;
+    }
+    .temporary div#apiInfo, #credits{
+        margin-top: 1%;
+    }
+    .temporary #credits a, .temporary #apiInfo a{
+        font-size: .7em;
+    }
+    .temporary span {
+        margin-top: 2%;
+        font-size: .8em;
+    }
+}
+
+/* Much smaller */
+@media only screen and (max-width: 320px) {
+    .input {
+        width: 98%;
+        border-radius: 3px;
+    }
+    .input input {
+        font-size: .6em;
+    }
+    .input #globeSvg {
+        width: 15px;
+        height: 15px;
+    }
+    .languageMenu {
+        width: 35%;
+    }
+    .current {
+        margin: 1% 0;
+        width: 95%;
+        padding: 1%;
+        border-radius: 3px;
+    }
+    .leftinfoImage{
+        width: 70%;
+    }
+    .leftinfoImage img {
+        width: 70%;
+    }
+    .leftinfo {
+        width: 60%;
+    }
+    .rightinfo {
+        width: 40%;
+    }
+    .forecast {
+        width: 98%;
+    }
+    .forecast .card {
+        border-radius: 3px;
+    }
+    .heading label {
+        font-size: .6em;
+    }
+    .heading span{
+        font-size: .6em;
+    }
+    .heading #city{
+        font-size: .8em;
+    }
+    .leftinfo #status { 
+        font-size: 1.2em;
+    }
+    .leftinfoData span{
+        font-size: 2.2em;
+    }
+    .leftinfoData span#feels {
+        font-size: .4em;
+    }
+    .rightinfo div span {
+        font-size: .6em;
+    }
+    .forecast .card span {
+        font-size: .5em;
+    }
+    .temporary {
+        width: 95%;
+        padding: 1%;
+        border-radius: 15px;
+    }
+    .temporary h1 {
+        font-size: 1em;;
+    }
+    .temporary label {
+        font-size: .8em;
+        margin-top: 4%;
+    }
+    .temporary div {
+        margin-top: 6%;
+    }
+    .temporary div div {
+        width: 100%;
+    }
+    .temporary div div:first-child a {
+        margin: 0 5%;
+    }
+    .temporary div div:first-child a {
+        margin: 0 5%;
+    }
+    .temporary div#apiInfo, #credits{
+        margin-top: 1%;
+    }
+    .temporary #credits a, .temporary #apiInfo a{
+        font-size: .7em;
+    }
+    .temporary span {
+        margin-top: 2%;
+        font-size: .8em;
+    }
+}

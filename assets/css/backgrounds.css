@@ -1,0 +1,50 @@
+.clearFreezing {
+    background: #354652 ;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(150deg, #3e637e , #d4cfc9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(150deg, #3e637e , #d4cfc9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation: gradient 10s ease infinite;
+}
+.clearCold {
+    background: #fffaeb ;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(320deg, #fffaeb, #6575b9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(320deg, #fffaeb, #6575b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation: gradient 10s ease infinite;
+}
+.clearWarm {
+    background: #0093E9 ;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(160deg, #0093E9, #80D0C7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(160deg, #0093E9, #80D0C7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation: gradient 10s ease infinite;
+}
+.clearHot {
+    background: #fddb92;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(20deg, #fddb92, #d1fdff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(20deg, #fddb92, #d1fdff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation: gradient 10s ease infinite;
+}
+
+.rain, .thunderstorm {
+    background: #32285e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(20deg, #32285e, #1a61a3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(20deg, #32285e, #1a61a3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation: gradient 10s ease infinite;
+}
+.drizzle, .atmosphere{
+    background: #5e548a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(20deg, #5e548a, #1a61a3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(20deg, #5e548a, #1a61a3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation: gradient 10s ease infinite;
+}
+.snow {
+    background: #fffaeb;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(20deg, #fffaeb, #6575b9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(20deg, #fffaeb, #6575b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation: gradient 10s ease infinite;
+}
+
+.night {
+    background: #111c23;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(145deg,#111c23,rgba(0, 0, 0, 0.8));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(145deg,#111c23,rgba(0, 0, 0, 0.8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    animation: gradient 10s ease infinite;
+}

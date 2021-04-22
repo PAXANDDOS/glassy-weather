@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>GlassyWeather</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Weather forecast for any city in the world using API.">
+        <meta name="keywords" content="PAXANDDOS, Paul Litovka, PXDD, UCODE, Full Stack, HTML, CSS, JavaScript">
+        <meta name="author" content="Paul Litovka">
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/backgrounds.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/media.css" type="text/css">
+        <link rel="shortcut icon" href="assets/fill/darksky/partly-cloudy-day.svg" type="image/x-icon">
+        <script src="assets/js/vanilla-tilt.js" defer></script>
+        <script src="assets/js/script.js" defer type="text/JavaScript"></script>
+    </head>
+    <body id="body">
+        <div class="temporary">
+            <h1 id="tempHeader"></h1>
+            <label id="tempText"></label>
+            <label id="tempWarning"></label>
+            <label id="tempQuestion"></label>
+            <div>
+                <div>
+                    <a href="https://github.com/PAXANDDOS" target="_blank" data-tilt data-tilt-max="0" data-tilt-scale="1.15">
+                        <svg width="40px" height="40px" fill="white" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 
+                            0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 
+                            17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 
+                            1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 
+                            1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 
+                            1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 
+                            1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 
+                            3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                        </svg>
+                    </a>
+                    <a href="https://web.telegram.org/#/im?p=@paxanddos" target="_blank" data-tilt data-tilt-max="0" data-tilt-scale="1.15">
+                        <svg width="40px" height="40px" fill="white" enable-background="new 0 0 24 24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m9.417 15.181-.397 5.584c.568 0 .814-.244 1.109-.537l2.663-2.545 5.518 4.041c1.012.564 
+                            1.725.267 1.998-.931l3.622-16.972.001-.001c.321-1.496-.541-2.081-1.527-1.714l-21.29 8.151c-1.453.564-1.431 
+                            1.374-.247 1.741l5.443 1.693 12.643-7.911c.595-.394 1.136-.176.691.218z" />
+                        </svg>
+                    </a>
+                </div>
+                <div>
+                    <a id="iconInfo"href="https://bas.dev/" target="_blank"></a>
+                </div>
+            </div>
+            <div id="credits">
+                <a href="https://steamcommunity.com/profiles/76561198121162960/" target="_blank">A Magyar nyelv Csordás Dominik által</a>
+                <a href="https://www.instagram.com/lizbethzepesch/" target="_blank">Deutsche Übersetzung von lizbethzepesch</a>
+            </div>
+            <div id="apiInfo">
+                <a href="https://openweathermap.org/" target="_blank">Weather API</a>
+                <a href="https://www.here.com/" target="_blank">Reverse Geocoding API</a>
+            </div>
+            <span>Copyright © PAXANDDOS</span>
+        </div>
+        <div class="input">
+            <input type="text" class="inputValue" placeholder="" />
+            <a name="openMenu" onclick="languageMenu(name)" data-tilt data-tilt-max="0" data-tilt-scale=".9">
+                <svg id="globeSvg" enable-background="new 0 0 512.15 512.15" viewBox="0 0 512.15 512.15" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m437.096 75.004c-48.352-48.367-112.64-75.004-181.021-75.004s-132.669 26.637-181.022 75.004c-48.35 48.366-74.978 112.671-74.978 
+                    181.071s26.628 132.705 74.979 181.071c48.353 48.367 112.641 75.004 181.021 75.004s132.669-26.637 181.021-75.004c48.351-48.366 
+                    74.979-112.671 74.979-181.071s-26.628-132.705-74.979-181.071zm39.015 129.175h-29.649c-2.802 
+                    0-5.609-.658-8.119-1.904l-56.443-28.005c-6.26-3.106-10.148-9.377-10.148-16.364v-9.081c0-5.938 2.899-11.522 
+                    7.756-14.939l23.043-16.214c6.856-4.823 12.283-11.324 15.848-18.876 28.797 29.715 48.501 65.971 57.712 
+                    105.383zm-379.841-107.965c42.686-42.699 99.439-66.214 159.805-66.214 13.563 0 26.942 1.197 40.021 3.522v31.902c0 9.326-6.638 
+                    17.422-15.783 19.251l-16.636 3.327c-23.119 4.624-39.899 25.092-39.899 48.668v22.461c0 5-1.881 9.764-5.296 13.414l-22.455 
+                    23.996c-10.558 11.282-15.212 26.502-12.769 41.758 1.152 7.195-1.599 14.156-7.358 18.621-5.76 4.464-13.188 5.392-19.868 
+                    2.481l-32.593-14.198c-6.291-2.741-12.96-4.13-19.822-4.13h-40.115c-10.109-16.847-17.734-34.987-22.722-54.07 10.82-33.875 
+                    29.627-64.918 55.49-90.789zm-66.195 159.861c0-4.278.131-8.536.366-12.774 3.704 7.178 7.764 14.185 12.209 20.984 2.771 
+                    4.237 7.491 6.791 12.554 6.791h48.413c2.714 0 5.352.55 7.841 1.634l32.594 14.198c6.502 2.833 13.282 4.227 19.996 4.227 
+                    10.725 0 21.276-3.56 30.231-10.5 14.561-11.286 21.515-28.884 18.603-47.075-.952-5.945.936-12.12 5.05-16.517l22.456-23.997c8.635-9.229 
+                    13.391-21.272 13.391-33.912v-22.461c0-9.326 6.638-17.422 15.783-19.251l16.636-3.327c23.119-4.624 39.899-25.091 39.899-48.668v-24.41c24.968 
+                    8.106 48.376 20.568 69.288 37.007-1.429 2.276-2.695 4.661-3.734 7.167-1.327 3.202-3.527 5.949-6.363 7.944l-23.044 16.215c-12.832 9.029-20.492 
+                    23.786-20.492 39.475v9.081c0 18.463 10.274 35.031 26.814 43.238l56.443 28.006c6.632 3.291 14.05 5.03 21.453 5.03h34.568c.69 7.233 1.046 14.537 
+                    1.046 21.896 0 8.344-.465 16.615-1.351 24.793-11.452-6.412-24.881-8.601-37.933-5.983l-25.693 5.154c-7.713 
+                    1.548-15.848-.632-21.756-5.828-11.887-10.454-27.713-15.327-43.422-13.372-15.708 1.957-29.855 10.564-38.814 23.615l-27.681 40.324c-3.153 
+                    4.594-7.81 8.069-13.111 9.785l-17.873 5.783c-24.93 8.065-40.907 32.818-37.99 58.859l2.524 22.537c.283 2.523.187 5.065-.288 7.561l-9.127 
+                    48.068c-42.622-8.875-81.788-29.922-113.289-61.433-42.688-42.704-66.197-99.477-66.197-159.864zm385.805 159.861c-42.686 42.699-99.438 
+                    66.214-159.805 66.214-5.625 0-11.219-.205-16.773-.61l8.857-46.638c1.034-5.442 1.246-10.994.629-16.502l-2.524-22.536c-1.337-11.935 
+                    5.985-23.279 17.411-26.976l17.873-5.783c11.569-3.743 21.729-11.325 28.611-21.35l27.679-40.323c4.167-6.069 10.485-9.913 17.79-10.823 
+                    7.304-.909 14.373 1.267 19.901 6.129 12.891 11.337 30.639 16.089 47.469 12.714l25.693-5.154c7.237-1.452 14.735.313 20.567 
+                    4.844.046.036.092.071.138.106l5.39 4.089c-9.996 38.472-30.066 73.749-58.906 102.599z"/>
+                </svg>
+            </a>
+            <div class="languageMenu">
+                <a name="closeMenu" onclick="languageMenu(name)">
+                    <svg id="closeSvg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.995 511.995" style="enable-background:new 0 0 511.995 511.995;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M437.126,74.939c-99.826-99.826-262.307-99.826-362.133,0C26.637,123.314,0,187.617,0,256.005
+                                    s26.637,132.691,74.993,181.047c49.923,49.923,115.495,74.874,181.066,74.874s131.144-24.951,181.066-74.874
+                                    C536.951,337.226,536.951,174.784,437.126,74.939z M409.08,409.006c-84.375,84.375-221.667,84.375-306.042,0
+                                    c-40.858-40.858-63.37-95.204-63.37-153.001s22.512-112.143,63.37-153.021c84.375-84.375,221.667-84.355,306.042,0
+                                    C493.435,187.359,493.435,324.651,409.08,409.006z"/>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <path d="M341.525,310.827l-56.151-56.071l56.151-56.071c7.735-7.735,7.735-20.29,0.02-28.046
+                                    c-7.755-7.775-20.31-7.755-28.065-0.02l-56.19,56.111l-56.19-56.111c-7.755-7.735-20.31-7.755-28.065,0.02
+                                    c-7.735,7.755-7.735,20.31,0.02,28.046l56.151,56.071l-56.151,56.071c-7.755,7.735-7.755,20.29-0.02,28.046
+                                    c3.868,3.887,8.965,5.811,14.043,5.811s10.155-1.944,14.023-5.792l56.19-56.111l56.19,56.111
+                                    c3.868,3.868,8.945,5.792,14.023,5.792c5.078,0,10.175-1.944,14.043-5.811C349.28,331.117,349.28,318.562,341.525,310.827z"/>
+                            </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                    </svg>
+                </a>
+                <a name="en" onclick="languageMenu(name)">English</a>
+                <a name="ru" onclick="languageMenu(name)">Русский</a>
+                <a name="uk" onclick="languageMenu(name)">Українська</a>
+                <a name="hu" onclick="languageMenu(name)">Magyar</a>
+                <a name="de" onclick="languageMenu(name)">Deutsch</a>
+            </div>
+        </div>
+        <div class="current">
+            <div class="heading">
+                <label id="curlabel"></label>
+                <span id="city"></span>
+                <span id="today"></span>
+            </div>
+            <div class="info">
+                <div class="leftinfo">
+                    <div class="leftinfoImage">
+                        <img id="currentImage" src="" alt="weather">
+                        <div class="leftinfoData">
+                            <span id="temp"></span>
+                            <span id="feels"></span>
+                        </div>
+                    </div>
+                    <span id="status"></span>
+                </div>
+                <div class="rightinfo">
+                    <div>
+                        <span id="windLabel"></span>
+                    </div>
+                    <div>
+                        <span id="humLabel"></span>
+                    </div>
+                    <div>
+                        <span id="pressLabel">></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="forecast">
+            <div class="card" id="0" onclick="changeDay(id)" data-tilt data-tilt-max="0" data-tilt-scale="1.06">
+                <span class="forecastDate"></span>
+                <img class="forecastImage" src="" alt="weather">
+                <span class="forecastTemp"></span>
+                <span class="forecastStatus"></span>
+            </div>
+            <div class="card" id="1" onclick="changeDay(id)" data-tilt data-tilt-max="0" data-tilt-scale="1.06">
+                <span class="forecastDate"></span>
+                <img class="forecastImage" src="" alt="weather">
+                <span class="forecastTemp"></span>
+                <span class="forecastStatus"></span>
+            </div>
+            <div class="card" id="2" onclick="changeDay(id)" data-tilt data-tilt-max="0" data-tilt-scale="1.06">
+                <span class="forecastDate"></span>
+                <img class="forecastImage" src="" alt="weather">
+                <span class="forecastTemp"></span>
+                <span class="forecastStatus"></span>
+            </div>
+            <div class="card" id="3" onclick="changeDay(id)" data-tilt data-tilt-max="0" data-tilt-scale="1.06">
+                <span class="forecastDate"></span>
+                <img class="forecastImage" src="" alt="weather">
+                <span class="forecastTemp"></span>
+                <span class="forecastStatus"></span>
+            </div>
+            <div class="card" id="4" onclick="changeDay(id)" data-tilt data-tilt-max="0" data-tilt-scale="1.06">
+                <span class="forecastDate"></span>
+                <img class="forecastImage" src="" alt="weather">
+                <span class="forecastTemp"></span>
+                <span class="forecastStatus"></span>
+            </div>
+        </div>
+    </body>
+</html>
